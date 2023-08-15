@@ -1,11 +1,27 @@
 package semana05;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 public class main {
 
     public static void main(String[] args) {        
+        
+        ArrayList<Conta> bank = new ArrayList<>();
+        Pessoa p = new Pessoa( "192.929.345-34", "Kaue", "rua das Laranjeiras", "48 - 9393933933");
+        Pessoa p2 = new Pessoa( "145.934.325-34", "Lucas", "rua das casas pah", "48 - 8737495824");
+        Pessoa p3 = new Pessoa( "145.234.565-22", "Erik", "Av sei lá", "48 - 7376495029");
+
+        bank.add(new Conta(p));
+        bank.add(new Conta(p2));
+        bank.add(new Conta(p3));
+        bank.get(0).depositar(5000.0);
+        bank.get(0).sacar(500.0);
+        
+        for(Conta conta: bank){
+            
+            System.out.println(conta.getTitulo().getNome());
+            System.out.println(" ");
+        }
 
 
 
@@ -18,20 +34,6 @@ public class main {
 
 
 
-
-
-
-//ArrayList<Cachorro> dogsList = new ArrayList<>();
-//        Pessoa donoUm =new Pessoa("Lucas", "rua do sei lá", "47-993840049");
-//        dogsList.add(new Cachorro("Princesa", 2, "PitBull", "Grande", donoUm));
-//
-//        dogsList.add(new Cachorro("Destruidor", 10, "Pincher", "Pequeno", donoUm));
-//       
-//        
-//        for(Cachorro dog : dogsList){
-//            System.out.println(dog.getNome() + " - " +  dog.getDono().getNome());
-//        }
-//        //System.out.println(cachorroUm.getNome() + " e " + cachorroDois.getNome());
     }
 
 }
