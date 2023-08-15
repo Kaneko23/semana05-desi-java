@@ -2,10 +2,18 @@ package semana05;
 
 public class Pessoa {
 
-    public Pessoa(String nome, String endereco, String telefone) {
+    public Pessoa(String cpf, String nome, String endereco, String telefone) {
         this.nome = nome;
+        if (this.validaCPF(cpf)) {
+            this.cpf = cpf;
+        }
         this.endereco = endereco;
         this.telefone = telefone;
+
+    }
+
+    public String getCpf() {
+        return cpf;
     }
 
     public String getNome() {
@@ -35,5 +43,10 @@ public class Pessoa {
     private String nome;
     private String endereco;
     private String telefone;
+    private String cpf;
+
+    private boolean validaCPF(String cpf) {
+        return true;
+    }
 
 }
